@@ -1,8 +1,9 @@
 print("--- PYTHON PROGRAM ---") #replace nalang
 user = input("Before accessing the program, we will need to know your name\nInput it here: ")
+print(f"Hello {user}, You may now access the program")
 
 def main_menu(): #main menu
-      print(f"""\nUser - {user}, Accessing - MENU
+      print(f"""
       =======================================================
         You're accessing MENU, Options are provided below =
          1 - print statements                              
@@ -20,7 +21,8 @@ def main_menu(): #main menu
 
 def print_statements_option1():
       print()
-      print("""\tYou can pass variables, strings, numbers, or other data types as one or more parameters when using the print() function.
+      print("""\tHOW DOES PRINT WORK?
+      You can pass variables, strings, numbers, or other data types as one or more parameters when using the print() function.
       Then, these parameters are represented as strings by their respective str() functions. To create a single output string, 
       the transformed strings are concatenated with spaces between them""")
       return print_statements_menu()
@@ -69,6 +71,8 @@ def process(choice):
             pass
       elif choice == "7":
             pass
+      elif choice == "8":
+            pass
       else:
             print("Invalid Choice, Please try again")
 
@@ -87,11 +91,45 @@ def variables_menu():
 
 def  variables_option(variable_choice):
       if variable_choice == "1":
-            pass
+            variable_choice_option1()
       if variable_choice == "2":
-            pass
+            variable_choice_option2()
       if variable_choice == "3":
             return main_menu()
+
+def variable_choice_option1():
+      print("""HOW DOES VARIABLES WORK?
+      In Python, variables are symbolic names that refer to objects or values stored in your computer’s memory. 
+      They allow you to assign descriptive names to data, making it easier to manipulate and reuse values throughout your code.
+
+      Understanding variables is key for Python developers because variables are essential building blocks for any Python program. 
+      Proper use of variables allows you to write clear, readable, and maintainable code.
+""")
+      return variables_menu()
+
+def variable_choice_option2():
+      print("You're accessing the sample programs using variable.")
+      print("Choose from the option below")
+      print("""
+      1. Bio-data
+      2. Putting a name on the center of a diamond
+      3. Return
+      """)
+      variable_sampleprogramchoice = input("Enter your choice: ")
+      variable_sampleprogram(variable_sampleprogramchoice)
+      return variable_sampleprogramchoice
+
+def variable_choice_option3():
+      return variables_menu()
+def variable_sampleprogram(variable_sampleprogramchoice):
+      if variable_sampleprogramchoice == "1":
+            from Activities import activity3_aguilera
+            return variable_choice_option2()
+      if variable_sampleprogramchoice == "2":
+            from code_challenges import code_challenge2
+            return variable_choice_option2()
+      else:
+            print("Invalid Choice")
 
 isContinue = True
 
