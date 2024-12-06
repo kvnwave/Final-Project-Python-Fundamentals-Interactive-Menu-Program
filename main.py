@@ -58,7 +58,7 @@ def process(choice):
       if choice == "1":
             print_statements_menu_option = print_statements_menu()
       elif choice == "2":
-            pass
+            variable_menu_option = variables_menu()
       elif choice == "3":
             pass
       elif choice == "4":
@@ -71,6 +71,27 @@ def process(choice):
             pass
       else:
             print("Invalid Choice, Please try again")
+
+def variables_menu():
+      print("""ACCESSING VARIBLES MENU
+      Variables are containers for storing data values.
+      Choose from the options below:
+            
+      1. How does it work?
+      2. Sample Programs
+      3. Return
+      """)
+      variable_choice = input("Enter your choice: ")
+      variables_option(variable_choice)
+      return 
+
+def  variables_option(variable_choice):
+      if variable_choice == "1":
+            pass
+      if variable_choice == "2":
+            pass
+      if variable_choice == "3":
+            return main_menu()
 
 isContinue = True
 
