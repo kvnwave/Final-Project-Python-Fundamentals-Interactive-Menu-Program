@@ -62,7 +62,7 @@ def process(choice):
       elif choice == "2":
             variable_menu_option = variables_menu()
       elif choice == "3":
-            pass
+            operators_menu_option = operators_menu()
       elif choice == "4":
             pass
       elif choice == "5":
@@ -128,6 +128,72 @@ def variable_sampleprogram(variable_sampleprogramchoice):
       if variable_sampleprogramchoice == "2":
             from code_challenges import code_challenge2
             return variable_choice_option2()
+      else:
+            print("Invalid Choice")
+
+def operators_menu():
+      print("""
+      ACCESSING OPERATORS MENU
+      Operators are used to perform operations on variables and values.
+      Choose from the options below:
+      
+      1. How does it work?
+      2. Sample programs
+      3. Return
+      """)
+      operators_choice = input("Enter your choice: ")
+      operators_choice_options(operators_choice)
+      return
+
+def operators_choice_options(operators_choice):
+      if operators_choice == "1":
+            operators_choice_option1()
+      elif operators_choice == "2":
+            operators_choice_option2()
+      elif operators_choice == "3":
+            return main_menu()
+      else:
+            print("Invalid choice")
+
+def operators_choice_option1():
+      print("""
+      Python operators are special symbols or keywords used to perform operations on variables and values. 
+      These operators allow for various functionalities, from basic arithmetic operations like addition, subtraction, 
+      multiplication, and division to more complex comparisons and logical operations. Python provides several types of 
+      operators, including arithmetic operators for mathematical calculations, comparison operators to compare values, and 
+      assignment operators to assign values to variable
+      """)
+      return operators_menu()
+
+def operators_choice_option2():
+      print("\nYou're accessing the sample programs using operators on python")
+      print("Choose from the option below")
+      print("""
+      1. Adding two numbers
+      2. Temperature Converter
+      3. Multiplication table using addition assignment operator
+      4. Two numbers in all operators 
+      5. Return
+      """)
+      operators_sampleprogramchoice = input("Enter your Choice: ")
+      operators_sampleprogram(operators_sampleprogramchoice)
+      return operators_sampleprogramchoice
+
+def operators_sampleprogram(operators_sampleprogramchoice):
+      if operators_sampleprogramchoice == "1":
+            from Activities import activity4
+            return  operators_choice_option2()
+      elif operators_sampleprogramchoice == "2":
+            from code_challenges import code_challenge5
+            return operators_choice_option2()
+      elif operators_sampleprogramchoice == "3":
+            from Activities import activity6
+            return operators_choice_option2()
+      elif operators_sampleprogramchoice == "4":
+            from code_challenges import code_challenge4
+            return operators_choice_option2()
+      elif operators_sampleprogramchoice == "5":
+            return operators_menu()
       else:
             print("Invalid Choice")
 
