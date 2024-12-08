@@ -19,15 +19,15 @@ def main_menu(): #main menu
       choice = input("Enter your choice: ")
       return choice
 
-def print_statements_option1():
+def print_statements_option1(): # option 1 for print statement
       print()
       print("""\tHOW DOES PRINT WORK?
       You can pass variables, strings, numbers, or other data types as one or more parameters when using the print() function.
       Then, these parameters are represented as strings by their respective str() functions. To create a single output string, 
       the transformed strings are concatenated with spaces between them""")
-      return print_statements_menu()
+      return print_statements_menu() 
 
-def print_statements_option2():
+def print_statements_option2(): 
       print()
       from Activities import activity1
       return print_statements_menu()
@@ -56,7 +56,7 @@ def print_choice_option(print_choice):
       else:
             print("Invalid Choice")
 
-def process(choice):
+def process(choice): # options for menu
       if choice == "1":
             print_statements_menu_option = print_statements_menu()
       elif choice == "2":
@@ -64,7 +64,7 @@ def process(choice):
       elif choice == "3":
             operators_menu_option = operators_menu()
       elif choice == "4":
-            pass
+            conditionalstatements_menu_option = conditionalstatements_menu()
       elif choice == "5":
             pass
       elif choice == "6":
@@ -72,7 +72,7 @@ def process(choice):
       elif choice == "7":
             pass
       elif choice == "8":
-            pass
+            print("Program Terminated")
       else:
             print("Invalid Choice, Please try again")
 
@@ -194,6 +194,75 @@ def operators_sampleprogram(operators_sampleprogramchoice):
             return operators_choice_option2()
       elif operators_sampleprogramchoice == "5":
             return operators_menu()
+      else:
+            print("Invalid Choice")
+
+def conditionalstatements_menu():
+      print("""
+      Conditional Statements are statements in Python that provide a choice for the control flow based on a condition.
+      
+      1. How does it work?
+      2. Sample programs
+      3. Return
+      """)
+      conditionalstatements_choice = input("Enter your choice:")
+      conditionalstatements_option(conditionalstatements_choice)
+      return conditionalstatements_choice
+      
+def conditionalstatements_option(conditionalstatements_choice):
+      if conditionalstatements_choice == "1":
+            conditionalstatements_option1()
+      elif conditionalstatements_choice == "2":
+            conditionalstatements_option2()
+      elif conditionalstatements_choice == "3":
+            return main_menu()
+
+def conditionalstatements_option1():
+      print("""
+      In Python, conditional statements allow you to execute different blocks of code based on certain conditions. 
+      The most common types of conditional statements are if, elif (else if), and else. 
+      These statements enable decision-making in your program.
+      """)
+      return conditionalstatements_menu()
+
+def conditionalstatements_option2():
+      print("""
+      You're accessing the conditional statements sample programs
+      Choose from the option below:
+            
+      1. Gold program
+      2. Password program
+      3. Stage of life program
+      4. DLL student status
+      5. Final Grade computation
+      6. Groceries program
+      7. Return
+      """)
+      conditionalstatements_option2_choice = input("Enter your Choice: ")
+      conditionalstatements_sampleprogram(conditionalstatements_option2_choice)
+      return conditionalstatements_option2_choice
+
+def conditionalstatements_sampleprogram( conditionalstatements_option2_choice):
+      if  conditionalstatements_option2_choice == "1":
+            from Activities import activity7
+            return conditionalstatements_option2()
+      elif  conditionalstatements_option2_choice == "2":
+            from Activities import activity8
+            return conditionalstatements_option2()
+      elif  conditionalstatements_option2_choice == "3":
+            from Activities import activity9
+            return conditionalstatements_option2()
+      elif  conditionalstatements_option2_choice == "4":
+            from Activities import activity10
+            return conditionalstatements_option2()
+      elif  conditionalstatements_option2_choice == "5":
+            from code_challenges import code_challenge6
+            return conditionalstatements_option2()
+      elif  conditionalstatements_option2_choice == "6":
+            from code_challenges import code_challenge7
+            return conditionalstatements_option2()
+      elif  conditionalstatements_option2_choice == "7":
+            return conditionalstatements_menu()
       else:
             print("Invalid Choice")
 
