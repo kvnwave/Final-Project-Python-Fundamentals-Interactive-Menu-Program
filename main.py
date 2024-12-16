@@ -7,6 +7,11 @@
 #             if main_menu_choice == "8":
 #                   # print("Program Terminated.")
 #                   break
+# import sys
+# import atexit     
+
+# def cleanup():
+#     print("Program Terminated.")
 
 def display_menu(): #main menu
       print(f"""
@@ -83,14 +88,13 @@ def print_choice_option(print_choice):
 #       else:
 #             print("Invalid Choice, Please try again")
 
-
 def main_menu():
-      process = True
-      while process == True:
+      stop = False
+      while stop != True:
             display_menu()  # Show the menu options
             choice = input("Enter your choice: ")
             if choice == "8":
-                  process = False
+                  stop == True
                   print("PROGRAM TERMINATED")
                   break
             elif choice == '1':
@@ -113,7 +117,7 @@ def main_menu():
                   lists_menu()
             elif choice == '7':
                   print("You chose option 7: Functions.")
-                  pass
+                  function_menu()
             # if choice == '8':
             #       # ask = input("Are you sure you want to exit? (y/n): ")
             #       # if ask.lower() == "y":
@@ -126,9 +130,7 @@ def main_menu():
             #       break
             else:
                   print("Invalid choice. Please try again.")
-                  continue
-            
-
+        
 def variables_menu():
       print("""ACCESSING VARIBLES MENU
       Variables are containers for storing data values.
@@ -541,6 +543,87 @@ def list_sampleprograms(list_option2_choice):
             return lists_menu()
       else:
             print("Invalid Choice")
+
+def function_menu():
+      print("""
+      ACCESSING MENU FOR FUNCTIONS 
+            
+      A function is a block of code which only runs when it is called.
+      You can pass data, known as parameters, into a function.
+      A function can return data as a result.
+            
+      Choose from the option below:
+      1. How does it works?
+      2. Sample programs
+      3. Return
+      """)
+      function_menu_choice = input("Enter your choice: ")
+      function_menu_option(function_menu_choice)
+      return function_menu_choice
+
+def function_menu_option(function_menu_choice):
+      if function_menu_choice == "1":
+            function_option1()
+      elif function_menu_choice == "2":
+            function_option2()
+      elif function_menu_choice == "3":
+            return main_menu()
+      else:
+            print("Invalid Choice")
+
+def function_option1():
+      print("""
+      Creating a Function
+      In Python a function is defined using the def keyword:
+            def my_function():
+                   print("Hello from a function")
+            
+      Calling a Function
+      To call a function, use the function name followed by parenthesis:
+            def my_function():
+                   print("Hello from a function")
+
+            my_function()
+
+      Arguments
+      Information can be passed into functions as arguments.
+      Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
+      The following example has a function with one argument (fname). When the function is called, we pass along a first name, which is used inside the function to print the full name:
+            def my_function(fname):
+                  print(fname + " Refsnes")
+
+            my_function("Emil")
+            my_function("Tobias")
+            my_function("Linus")   
+                  """)
+      return function_menu()
+
+def function_option2(): # 22 23 cc16
+      print("""
+      You're Accessing the sample programs using functions
+      
+      1. Simple menu
+      2. Factorial
+      3. Grocery program
+      4. Return
+      """)
+      f_option2_choice = input("Enter your choice: ")
+      function_sampleprograms(f_option2_choice)
+      return f_option2_choice
+
+def function_sampleprograms(f_option2_choice):
+      if f_option2_choice == "1":
+            from Activities import activity22
+            return function_option2()
+      elif f_option2_choice == "2":
+            from Activities import activity23
+            return function_option2()
+      elif f_option2_choice == "3":
+            from code_challenges import code_challenge16
+            return function_option2()
+      else:
+            print("Invalid Choice")
+     
 # isContinue = True
 
 # while isContinue:
@@ -553,6 +636,4 @@ def list_sampleprograms(list_option2_choice):
 print("--- PYTHON PROGRAM ---") #replace nalang
 user = input("Before accessing the program, we will need to know your name\nInput it here: ")
 print(f"Hello {user}, You may now access the program")
-
-if __name__ == "__main__":
-    main_menu()
+main_menu()
