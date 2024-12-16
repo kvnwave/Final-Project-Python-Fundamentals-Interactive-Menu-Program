@@ -85,11 +85,15 @@ def print_choice_option(print_choice):
 
 
 def main_menu():
-      while True:
+      process = True
+      while process == True:
             display_menu()  # Show the menu options
             choice = input("Enter your choice: ")
-
-            if choice == '1':
+            if choice == "8":
+                  process = False
+                  print("PROGRAM TERMINATED")
+                  break
+            elif choice == '1':
                   print("You chose option 1: Print statements.")
                   print_statements_menu()
             elif choice == '2':
@@ -106,14 +110,20 @@ def main_menu():
                   loops_menu()
             elif choice == '6':
                   print("You chose option 6: Lists.")
-                  pass
+                  lists_menu()
             elif choice == '7':
                   print("You chose option 7: Functions.")
                   pass
-            elif choice == '8':
-                  print("Program Terminated.")
-                  False
-                  break 
+            # if choice == '8':
+            #       # ask = input("Are you sure you want to exit? (y/n): ")
+            #       # if ask.lower() == "y":
+            #       #       break
+            #       # elif ask.lower() == "n":
+            #       #       continue
+            #       # else:
+            #       #       print("Invalid Choice, Please try again")
+            #       #       continue
+            #       break
             else:
                   print("Invalid choice. Please try again.")
                   continue
@@ -469,6 +479,66 @@ def  while_loops_menu(while_loops_choice):
             return while_loops()
       elif while_loops_choice == "5":
             return loops_choice_option2()
+      else:
+            print("Invalid Choice")
+
+def lists_menu():
+      print("""
+      ACCESSING MENU FOR LISTS
+      Lists are used to store multiple items in a single variable.
+      Choose from the options below:
+            
+      1. How does it work?
+      2. Sample programs
+      3. Return 
+      """)
+      list_menu_choice = input("Enter your choice: ")
+      lists_menu_option(list_menu_choice)
+      return list_menu_choice
+
+def lists_menu_option(list_menu_choice):
+      if list_menu_choice == "1":
+            list_option1()
+      elif list_menu_choice == "2":
+            list_option2()
+      elif list_menu_choice == "3":
+            return main_menu()
+      else:
+            print("Invalid Choice")
+
+
+def list_option1():
+      print("""
+      List items are ordered, changeable, and allow duplicate values.
+      List items are indexed, the first item has index [0], the second item has index [1] etc.
+            
+      Ordered
+      When we say that lists are ordered, it means that the items have a defined order, and that order will not change.
+      If you add new items to a list, the new items will be placed at the end of the list.
+      
+      Changeable
+      The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+      """)
+      return lists_menu()
+
+def list_option2():
+      print("""   
+      You're accessing sample programs using loops 
+      Choose from the option below:
+            
+      1. Fruits list
+      2. Return
+      """)
+      list_option2_choice = input("Enter your choice: ")
+      list_sampleprograms(list_option2_choice)
+      return list_option2_choice
+
+def list_sampleprograms(list_option2_choice):
+      if list_option2_choice == "1":
+            from Activities import activity25
+            return list_option2()
+      elif list_option2_choice == "2":
+            return lists_menu()
       else:
             print("Invalid Choice")
 # isContinue = True
