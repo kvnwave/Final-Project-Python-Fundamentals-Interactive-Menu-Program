@@ -1,8 +1,14 @@
-print("--- PYTHON PROGRAM ---") #replace nalang
-user = input("Before accessing the program, we will need to know your name\nInput it here: ")
-print(f"Hello {user}, You may now access the program")
+# def menu():
+#       isContinue = True
 
-def main_menu(): #main menu
+#       while isContinue:
+#             main_menu_choice = main_menu()      
+#             process(main_menu_choice)
+#             if main_menu_choice == "8":
+#                   # print("Program Terminated.")
+#                   break
+
+def display_menu(): #main menu
       print(f"""
       =======================================================
         You're accessing MENU, Options are provided below =
@@ -16,8 +22,8 @@ def main_menu(): #main menu
          8 - exit                                          
       =======================================================   
       """)  
-      choice = input("Enter your choice: ")
-      return choice
+      # choice = input("Enter your choice: ")
+      # return choice
 
 def print_statements_option1(): # option 1 for print statement
       print()
@@ -56,25 +62,62 @@ def print_choice_option(print_choice):
       else:
             print("Invalid Choice")
 
-def process(choice): # options for menu
-      if choice == "1":
-            print_statements_menu_option = print_statements_menu()
-      elif choice == "2":
-            variable_menu_option = variables_menu()
-      elif choice == "3":
-            operators_menu_option = operators_menu()
-      elif choice == "4":
-            conditionalstatements_menu_option = conditionalstatements_menu()
-      elif choice == "5":
-            pass
-      elif choice == "6":
-            pass
-      elif choice == "7":
-            pass
-      elif choice == "8":
-            print("Program Terminated")
-      else:
-            print("Invalid Choice, Please try again")
+# def process(choice): # options for menu
+#       if choice == "1":
+#             print_statements_menu_option = print_statements_menu()
+#       elif choice == "2":
+#             variable_menu_option = variables_menu()
+#       elif choice == "3":
+#             operators_menu_option = operators_menu()
+#       elif choice == "4":
+#             conditionalstatements_menu_option = conditionalstatements_menu()
+#       elif choice == "5":
+#             loops_menu()
+#       elif choice == "6":
+#             pass
+#       elif choice == "7":
+#             pass
+#       elif choice == "8":
+#             print("Program Terminated")
+#             return
+#       else:
+#             print("Invalid Choice, Please try again")
+
+
+def main_menu():
+      while True:
+            display_menu()  # Show the menu options
+            choice = input("Enter your choice: ")
+
+            if choice == '1':
+                  print("You chose option 1: Print statements.")
+                  print_statements_menu()
+            elif choice == '2':
+                  print("You chose option 2: Variables.")
+                  variables_menu()
+            elif choice == '3':
+                  print("You chose option 3: Operators.")
+                  operators_menu()
+            elif choice == '4':
+                  print("You chose option 4: Conditional statements.")
+                  conditionalstatements_menu()
+            elif choice == '5':
+                  print("You chose option 5: Loops.")
+                  loops_menu()
+            elif choice == '6':
+                  print("You chose option 6: Lists.")
+                  pass
+            elif choice == '7':
+                  print("You chose option 7: Functions.")
+                  pass
+            elif choice == '8':
+                  print("Program Terminated.")
+                  False
+                  break 
+            else:
+                  print("Invalid choice. Please try again.")
+                  continue
+            
 
 def variables_menu():
       print("""ACCESSING VARIBLES MENU
@@ -266,11 +309,180 @@ def conditionalstatements_sampleprogram( conditionalstatements_option2_choice):
       else:
             print("Invalid Choice")
 
-isContinue = True
+def loops_menu():
+      print("""
+      ACCESSING MENU FOR LOOPS
+      A for loop in Python is a control flow statement that is used to repeatedly execute a group of statements as long as the condition is satisfied.
+      Choose from the options below:
+            
+      1. How does it work?
+      2. Sample programs
+      3. Return
+      """)
+      loops_menu_choice = input("Enter your choice: ")
+      loops_choice_option(loops_menu_choice)
+      return
 
-while isContinue:
-      main_menu_choice = main_menu()      
-      process(main_menu_choice)
-      if main_menu_choice == "8":
-            print("Program Terminated.")
-            break
+def loops_choice_option(loops_menu_choice):
+      if loops_menu_choice == "1":
+           loops_choice_option1()
+      elif loops_menu_choice == "2":
+           loops_choice_option2()
+      elif loops_menu_choice == "3":
+            return main_menu()
+      else:
+            print("Invalid Choice")
+
+
+def loops_choice_option1():
+      print("""
+      Python loops are fundamental constructs that allow you to execute a block of code repeatedly. 
+      There are primarily two types of loops in Python: for loops and while loops. 
+      Each serves different purposes and is used based on the specific requirements of your program.
+      
+      For Loops
+      Definition: A for loop is used to iterate over a sequence (like a list, tuple, dictionary, set, or string) and execute a block of code for each item in that sequence.
+            
+      While Loops
+      Definition: A while loop continues to execute as long as a specified condition is true.
+      """)
+      return loops_menu()
+
+def loops_choice_option2():
+      print("""
+      You're accessing sample programs using loops.
+      Choose from the option below:
+            
+      1. For loops
+      2. While loops
+      3. Return
+      """)
+      loops_choice_option2_choice = input("Enter your choice: ")
+      loops_sampleprograms(loops_choice_option2_choice)
+      return loops_choice_option2_choice
+
+def  loops_sampleprograms(loops_choice_option2_choice):
+      if loops_choice_option2_choice == "1":
+            for_loops()
+      elif loops_choice_option2_choice == "2":
+            while_loops()
+      elif loops_choice_option2_choice == "3":
+            return loops_menu()
+      else:
+            print("Invalid Choice")
+
+def for_loops(): 
+      print("""
+      You're accessing For loop sample programs
+      Choosee from the option below:
+            
+      1. Lyrics loop  
+      2. Countdown
+      3. Factorial using loop
+      4. Countdown with *
+      5. Right angle triangle program
+      6. Multiplication table
+      7. Triangle generator
+      8. Input 10 numbers
+      9. Inverted Triangle
+      10. Diamond
+      11. Diamond with tip
+      12. Arrow
+      13. Diamond but numbers
+      14. Return
+      """)
+      for_loops_choice = input("Enter your choice: ")
+      for_loops_menu(for_loops_choice)
+      return for_loops_choice
+
+def for_loops_menu(for_loops_choice):
+      if for_loops_choice == "1":
+            from Activities import activity11
+            return for_loops()
+      elif for_loops_choice == "2":
+            from Activities import activity12
+            return for_loops()
+      elif for_loops_choice == "3":
+            from Activities import activity13
+            return for_loops()
+      elif for_loops_choice == "4":
+            from Activities import activity14
+            return for_loops()
+      elif for_loops_choice == "5":
+            from Activities import activity15
+            return for_loops()
+      elif for_loops_choice == "6":
+            from Activities import activity17
+            return for_loops()
+      elif for_loops_choice == "7":
+            from Activities import activity18
+            return for_loops()
+      elif for_loops_choice == "8":
+            from code_challenges import code_challenge8
+            return for_loops()
+      elif for_loops_choice == "9":
+            from code_challenges import code_challenge9
+            return for_loops()
+      elif for_loops_choice == "10":
+            from code_challenges import code_challenge10
+            return for_loops()
+      elif for_loops_choice == "11":
+            from code_challenges import code_challenge11
+            return for_loops()
+      elif for_loops_choice == "12":
+            from code_challenges import code_challenge12
+            return for_loops()
+      elif for_loops_choice == "13":
+            from code_challenges import code_challenge13
+            return for_loops()
+      elif for_loops_choice == "14":
+            return loops_choice_option2()
+      else:
+            print("Invalid Choice")
+
+def while_loops(): # 19 20 cc14 cc15
+      print("""
+      You're accessing While loop sample programs
+      Choosee from the option below:
+      1. Hello <name>
+      2. Infinite triangle generator
+      3. Input infinite number with summation at the end
+      4. Infinite triangle
+      5. Return
+      """)
+      while_loops_choice = input("Enter a number: ")
+      while_loops_menu(while_loops_choice)
+      return while_loops_choice
+
+def  while_loops_menu(while_loops_choice):
+      if while_loops_choice == "1":
+            from Activities import activity19
+            return while_loops()
+      elif while_loops_choice == "2":
+            from Activities import activity20
+            return while_loops()
+      elif while_loops_choice == "3":
+            from code_challenges import code_challenge14
+            return while_loops()
+      elif while_loops_choice == "4":
+            from code_challenges import code_challenge15
+            return while_loops()
+      elif while_loops_choice == "5":
+            return loops_choice_option2()
+      else:
+            print("Invalid Choice")
+# isContinue = True
+
+# while isContinue:
+#       main_menu_choice = main_menu()      
+#       process(main_menu_choice)
+#       if main_menu_choice == "8":
+#             print("Program Terminated.")
+#             break
+
+print("--- PYTHON PROGRAM ---") #replace nalang
+user = input("Before accessing the program, we will need to know your name\nInput it here: ")
+print(f"Hello {user}, You may now access the program")
+
+if __name__ == "__main__":
+    main_menu()

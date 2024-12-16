@@ -1,6 +1,6 @@
 # loop
 
-for lyrics in range(1,901):
+for lyrics in range(1,20):
     # die with a smile
     print("If the world was ending")
     print("I wanna be next to you...")
