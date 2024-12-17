@@ -1,17 +1,10 @@
-# def menu():
-#       isContinue = True
+import sys
 
-#       while isContinue:
-#             main_menu_choice = main_menu()      
-#             process(main_menu_choice)
-#             if main_menu_choice == "8":
-#                   # print("Program Terminated.")
-#                   break
-# import sys
-# import atexit     
-
-# def cleanup():
-#     print("Program Terminated.")
+def start():
+      print("--- PYTHON PROGRAM MENU  ---") #replace nalang
+      user = input("Before accessing the program, we will need to know your name\nInput it here: ")
+      print(f"Hello {user}, You may now access the program\n\n")
+      main_menu()
 
 def display_menu(): #main menu
       print(f"""
@@ -27,24 +20,22 @@ def display_menu(): #main menu
          8 - exit                                          
       =======================================================   
       """)  
-      # choice = input("Enter your choice: ")
-      # return choice
 
-def print_statements_option1(): # option 1 for print statement
+def print_statements_option1():
       print()
       print("""\tHOW DOES PRINT WORK?
       You can pass variables, strings, numbers, or other data types as one or more parameters when using the print() function.
       Then, these parameters are represented as strings by their respective str() functions. To create a single output string, 
       the transformed strings are concatenated with spaces between them""")
-      return print_statements_menu() 
+      print_statements_menu() 
 
 def print_statements_option2(): 
       print()
       from Activities import activity1
-      return print_statements_menu()
+      print_statements_menu()
 
 def print_statements_option3():
-      return main_menu()
+      main_menu()
 
 def print_statements_menu():
       print("\nACCESSING PRINT STATEMENTS MENU")
@@ -67,69 +58,38 @@ def print_choice_option(print_choice):
       else:
             print("Invalid Choice")
 
-# def process(choice): # options for menu
-#       if choice == "1":
-#             print_statements_menu_option = print_statements_menu()
-#       elif choice == "2":
-#             variable_menu_option = variables_menu()
-#       elif choice == "3":
-#             operators_menu_option = operators_menu()
-#       elif choice == "4":
-#             conditionalstatements_menu_option = conditionalstatements_menu()
-#       elif choice == "5":
-#             loops_menu()
-#       elif choice == "6":
-#             pass
-#       elif choice == "7":
-#             pass
-#       elif choice == "8":
-#             print("Program Terminated")
-#             return
-#       else:
-#             print("Invalid Choice, Please try again")
-
 def main_menu():
-      stop = False
-      while stop != True:
+      isContinue = True
+      while isContinue:
             display_menu()  # Show the menu options
-            choice = input("Enter your choice: ")
-            if choice == "8":
-                  stop == True
-                  print("PROGRAM TERMINATED")
-                  break
-            elif choice == '1':
+            choice = input("Enter your choice: ")     
+            if choice == '1':
                   print("You chose option 1: Print statements.")
                   print_statements_menu()
-            elif choice == '2':
+            if choice == '2':
                   print("You chose option 2: Variables.")
                   variables_menu()
-            elif choice == '3':
+            if choice == '3':
                   print("You chose option 3: Operators.")
                   operators_menu()
-            elif choice == '4':
+            if choice == '4':
                   print("You chose option 4: Conditional statements.")
                   conditionalstatements_menu()
-            elif choice == '5':
+            if choice == '5':
                   print("You chose option 5: Loops.")
                   loops_menu()
-            elif choice == '6':
+            if choice == '6':
                   print("You chose option 6: Lists.")
                   lists_menu()
-            elif choice == '7':
+            if choice == '7':
                   print("You chose option 7: Functions.")
                   function_menu()
-            # if choice == '8':
-            #       # ask = input("Are you sure you want to exit? (y/n): ")
-            #       # if ask.lower() == "y":
-            #       #       break
-            #       # elif ask.lower() == "n":
-            #       #       continue
-            #       # else:
-            #       #       print("Invalid Choice, Please try again")
-            #       #       continue
-            #       break
+            if choice == "8":
+                  print("Program Terminated, You may now close it. ")
+                  sys.exit()
             else:
                   print("Invalid choice. Please try again.")
+        
         
 def variables_menu():
       print("""ACCESSING VARIBLES MENU
@@ -150,7 +110,7 @@ def  variables_option(variable_choice):
       if variable_choice == "2":
             variable_choice_option2()
       if variable_choice == "3":
-            return main_menu()
+            main_menu()
 
 def variable_choice_option1():
       print("""HOW DOES VARIABLES WORK?
@@ -160,7 +120,7 @@ def variable_choice_option1():
       Understanding variables is key for Python developers because variables are essential building blocks for any Python program. 
       Proper use of variables allows you to write clear, readable, and maintainable code.
 """)
-      return variables_menu()
+      variables_menu()
 
 def variable_choice_option2():
       print("You're accessing the sample programs using variable.")
@@ -175,7 +135,7 @@ def variable_choice_option2():
       return variable_sampleprogramchoice
 
 def variable_choice_option3():
-      return variables_menu()
+      variables_menu()
 def variable_sampleprogram(variable_sampleprogramchoice):
       if variable_sampleprogramchoice == "1":
             from Activities import activity3_aguilera
@@ -218,7 +178,7 @@ def operators_choice_option1():
       operators, including arithmetic operators for mathematical calculations, comparison operators to compare values, and 
       assignment operators to assign values to variable
       """)
-      return operators_menu()
+      operators_menu()
 
 def operators_choice_option2():
       print("\nYou're accessing the sample programs using operators on python")
@@ -237,18 +197,18 @@ def operators_choice_option2():
 def operators_sampleprogram(operators_sampleprogramchoice):
       if operators_sampleprogramchoice == "1":
             from Activities import activity4
-            return  operators_choice_option2()
+            operators_choice_option2()
       elif operators_sampleprogramchoice == "2":
             from code_challenges import code_challenge5
-            return operators_choice_option2()
+            operators_choice_option2()
       elif operators_sampleprogramchoice == "3":
             from Activities import activity6
-            return operators_choice_option2()
+            operators_choice_option2()
       elif operators_sampleprogramchoice == "4":
             from code_challenges import code_challenge4
-            return operators_choice_option2()
+            operators_choice_option2()
       elif operators_sampleprogramchoice == "5":
-            return operators_menu()
+            operators_menu()
       else:
             print("Invalid Choice")
 
@@ -270,7 +230,7 @@ def conditionalstatements_option(conditionalstatements_choice):
       elif conditionalstatements_choice == "2":
             conditionalstatements_option2()
       elif conditionalstatements_choice == "3":
-            return main_menu()
+            main_menu()
 
 def conditionalstatements_option1():
       print("""
@@ -278,7 +238,7 @@ def conditionalstatements_option1():
       The most common types of conditional statements are if, elif (else if), and else. 
       These statements enable decision-making in your program.
       """)
-      return conditionalstatements_menu()
+      conditionalstatements_menu()
 
 def conditionalstatements_option2():
       print("""
@@ -300,24 +260,24 @@ def conditionalstatements_option2():
 def conditionalstatements_sampleprogram( conditionalstatements_option2_choice):
       if  conditionalstatements_option2_choice == "1":
             from Activities import activity7
-            return conditionalstatements_option2()
+            conditionalstatements_option2()
       elif  conditionalstatements_option2_choice == "2":
             from Activities import activity8
-            return conditionalstatements_option2()
+            conditionalstatements_option2()
       elif  conditionalstatements_option2_choice == "3":
             from Activities import activity9
-            return conditionalstatements_option2()
+            conditionalstatements_option2()
       elif  conditionalstatements_option2_choice == "4":
             from Activities import activity10
-            return conditionalstatements_option2()
+            conditionalstatements_option2()
       elif  conditionalstatements_option2_choice == "5":
             from code_challenges import code_challenge6
-            return conditionalstatements_option2()
+            conditionalstatements_option2()
       elif  conditionalstatements_option2_choice == "6":
             from code_challenges import code_challenge7
-            return conditionalstatements_option2()
+            conditionalstatements_option2()
       elif  conditionalstatements_option2_choice == "7":
-            return conditionalstatements_menu()
+            conditionalstatements_menu()
       else:
             print("Invalid Choice")
 
@@ -341,7 +301,7 @@ def loops_choice_option(loops_menu_choice):
       elif loops_menu_choice == "2":
            loops_choice_option2()
       elif loops_menu_choice == "3":
-            return main_menu()
+            main_menu()
       else:
             print("Invalid Choice")
 
@@ -358,7 +318,7 @@ def loops_choice_option1():
       While Loops
       Definition: A while loop continues to execute as long as a specified condition is true.
       """)
-      return loops_menu()
+      loops_menu()
 
 def loops_choice_option2():
       print("""
@@ -379,7 +339,7 @@ def  loops_sampleprograms(loops_choice_option2_choice):
       elif loops_choice_option2_choice == "2":
             while_loops()
       elif loops_choice_option2_choice == "3":
-            return loops_menu()
+            loops_menu()
       else:
             print("Invalid Choice")
 
@@ -410,49 +370,49 @@ def for_loops():
 def for_loops_menu(for_loops_choice):
       if for_loops_choice == "1":
             from Activities import activity11
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "2":
             from Activities import activity12
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "3":
             from Activities import activity13
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "4":
             from Activities import activity14
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "5":
             from Activities import activity15
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "6":
             from Activities import activity17
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "7":
             from Activities import activity18
             return for_loops()
       elif for_loops_choice == "8":
             from code_challenges import code_challenge8
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "9":
             from code_challenges import code_challenge9
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "10":
             from code_challenges import code_challenge10
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "11":
             from code_challenges import code_challenge11
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "12":
             from code_challenges import code_challenge12
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "13":
             from code_challenges import code_challenge13
-            return for_loops()
+            for_loops()
       elif for_loops_choice == "14":
-            return loops_choice_option2()
+            loops_choice_option2()
       else:
             print("Invalid Choice")
 
-def while_loops(): # 19 20 cc14 cc15
+def while_loops(): 
       print("""
       You're accessing While loop sample programs
       Choosee from the option below:
@@ -469,18 +429,18 @@ def while_loops(): # 19 20 cc14 cc15
 def  while_loops_menu(while_loops_choice):
       if while_loops_choice == "1":
             from Activities import activity19
-            return while_loops()
+            while_loops()
       elif while_loops_choice == "2":
             from Activities import activity20
-            return while_loops()
+            while_loops()
       elif while_loops_choice == "3":
             from code_challenges import code_challenge14
-            return while_loops()
+            while_loops()
       elif while_loops_choice == "4":
             from code_challenges import code_challenge15
-            return while_loops()
+            while_loops()
       elif while_loops_choice == "5":
-            return loops_choice_option2()
+            loops_choice_option2()
       else:
             print("Invalid Choice")
 
@@ -504,7 +464,7 @@ def lists_menu_option(list_menu_choice):
       elif list_menu_choice == "2":
             list_option2()
       elif list_menu_choice == "3":
-            return main_menu()
+            main_menu()
       else:
             print("Invalid Choice")
 
@@ -521,7 +481,7 @@ def list_option1():
       Changeable
       The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
       """)
-      return lists_menu()
+      lists_menu()
 
 def list_option2():
       print("""   
@@ -538,9 +498,9 @@ def list_option2():
 def list_sampleprograms(list_option2_choice):
       if list_option2_choice == "1":
             from Activities import activity25
-            return list_option2()
+            list_option2()
       elif list_option2_choice == "2":
-            return lists_menu()
+            lists_menu()
       else:
             print("Invalid Choice")
 
@@ -567,7 +527,7 @@ def function_menu_option(function_menu_choice):
       elif function_menu_choice == "2":
             function_option2()
       elif function_menu_choice == "3":
-            return main_menu()
+            main_menu()
       else:
             print("Invalid Choice")
 
@@ -596,9 +556,9 @@ def function_option1():
             my_function("Tobias")
             my_function("Linus")   
                   """)
-      return function_menu()
+      function_menu()
 
-def function_option2(): # 22 23 cc16
+def function_option2(): 
       print("""
       You're Accessing the sample programs using functions
       
@@ -614,26 +574,22 @@ def function_option2(): # 22 23 cc16
 def function_sampleprograms(f_option2_choice):
       if f_option2_choice == "1":
             from Activities import activity22
-            return function_option2()
+            function_option2()
       elif f_option2_choice == "2":
             from Activities import activity23
-            return function_option2()
+            function_option2()
       elif f_option2_choice == "3":
             from code_challenges import code_challenge16
-            return function_option2()
+            function_option2()
       else:
             print("Invalid Choice")
-     
-# isContinue = True
 
-# while isContinue:
-#       main_menu_choice = main_menu()      
-#       process(main_menu_choice)
-#       if main_menu_choice == "8":
-#             print("Program Terminated.")
-#             break
-
-print("--- PYTHON PROGRAM ---") #replace nalang
-user = input("Before accessing the program, we will need to know your name\nInput it here: ")
-print(f"Hello {user}, You may now access the program")
-main_menu()
+print("Final Project for ITCS102")
+strt = input("Would you like to access the program? (y/n): ")
+if strt.lower() == "y":
+      start()
+elif strt.lower() == "n":
+      print("Thank you for coming, You may now close the program. ")
+      sys.exit()
+else:
+      print("Invalid choice, Please try again.")
