@@ -1647,7 +1647,7 @@ def function_option2():
       
       1. Simple menu
       2. Factorial
-      3. Grocery program
+      3. Banking program
       4. Return
       """)
       f_option2_choice = input("Enter your choice: ")
