@@ -1,4 +1,7 @@
 import sys
+import io
+import os
+
 #explanations for each code starts here
 def act1_help(): 
       print("""\n \033[1m
@@ -109,7 +112,11 @@ def activity3_help():
       """)
 
 def code_challenge2_help():
-      pass
+      
+     print(""" 
+     name = input("Enter your name: ")
+     print(f"\t\t       * \n\t\t     *   *\n\t\t   *   *   *\n\t       *     {name}    *\n\t\t   *   *   *\n\t\t     *   *\n\t\t       * ")
+     """)
 
 def activity4_help():
       print("""\033[1m
@@ -1064,13 +1071,14 @@ def display_menu(): #main menu
          5 - loops                                        
          6 - lists                                         
          7 - functions                                     
-         8 - exit                                          
+         8 - exit                                  
       =======================================================   
       \033[0m""")  
 
 def print_statements_option1():
       print()
-      print("""\tHOW DOES PRINT WORK?
+      print("""\t
+      HOW DOES PRINT WORK?
       You can pass variables, strings, numbers, or other data types as one or more parameters when using the print() function.
       Then, these parameters are represented as strings by their respective str() functions. To create a single output string, 
       the transformed strings are concatenated with spaces between them""")
@@ -1140,7 +1148,7 @@ def main_menu():
         
         
 def variables_menu():
-      print("""ACCESSING VARIBLES MENU
+      print("""\nACCESSING VARIBLES MENU
       Variables are containers for storing data values.
       Choose from the options below:
             
@@ -1191,6 +1199,7 @@ def variable_sampleprogram(variable_sampleprogramchoice):
             return variable_choice_option2()
       if variable_sampleprogramchoice == "2":
             from code_challenges import code_challenge2
+            code_challenge2_help()
             return variable_choice_option2()
       else:
             print("Invalid Choice")
