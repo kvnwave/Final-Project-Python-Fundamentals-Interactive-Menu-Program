@@ -1,7 +1,4 @@
 import sys
-import io
-import os
-
 #explanations for each code starts here
 def act1_help(): 
       print("""\n \033[1m
@@ -115,7 +112,7 @@ def code_challenge2_help():
       
      print(""" 
      name = input("Enter your name: ")
-     print(f"\t\t       * \n\t\t     *   *\n\t\t   *   *   *\n\t       *     {name}    *\n\t\t   *   *   *\n\t\t     *   *\n\t\t       * ")
+     print(f"\ t\ t       * \ n\ t\ t      *   *\ n\ t\ t   *   *   *\ n\ t       *     {name}    *\ n \ t\ t   *   *   *\ n \ t \ t     *   *\ n \ t\ t        * ")
      """)
 
 def activity4_help():
